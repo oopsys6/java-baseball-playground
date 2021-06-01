@@ -4,20 +4,18 @@ import java.util.Scanner;
 
 public class StringCalculator {
 
-    public static void main(String[] args) {
+    public void run() {
         Scanner scanner = new Scanner(System.in);
+        String value = Input.getStringValue(scanner);
+        String[] values = Input.splitStringValues(value);
 
-        String[] values = Input.getStringValues(scanner);
-
-        int result = Integer.parseInt(values[0]);
-
-        for (int i = 1; i < values.length; i += 2) {
-            String symbol = values[i];
-            int second = Integer.parseInt(values[i + 1]);
-
-            result = Calculator.calculator(result, second, symbol);
-        }
+        int result = Calculator.calculate(values);
 
         Output.print(result);
+    }
+
+    public static void main(String[] args) {
+        StringCalculator stringCalculator = new StringCalculator();
+        stringCalculator.run();
     }
 }
