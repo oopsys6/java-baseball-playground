@@ -3,14 +3,9 @@ package string_calculator;
 import java.util.Scanner;
 
 public class Input {
+    private static Scanner scanner = new Scanner(System.in);
 
-    public static String getStringValue(Scanner scanner) {
-        String value = scanner.nextLine();
-        return value;
-    }
-
-    public static String[] splitStringValues(String value) {
-        String[] values = value.split(" ");
-        return values;
+    public static String inputData() {
+        return scanner.nextLine();
     }
 }
